@@ -21,7 +21,7 @@ export default class PostsApiService {
     });
 
     try {
-      const response = await axios.get(`${BASE_URL}?${OPTIONS.toString()}`);
+      const response = await axios.get(`${URL}?${OPTIONS.toString()}`);
 
       this.incrementPage();
 
