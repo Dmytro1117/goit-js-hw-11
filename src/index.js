@@ -2,7 +2,7 @@ import { Notify } from 'notiflix';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
-import PostApiService from './js/axios';
+import apiAx from './js/axios';
 import LoadMoreBtn from './js/load';
 
 const refs = {
@@ -16,7 +16,7 @@ const loadMoreBtn = new LoadMoreBtn({
   hidden: true,
 });
 
-const postApiService = new PostApiService();
+const apiAxios = new apiAx();
 
 refs.formSearch.addEventListener('submit', onSearch);
 loadMoreBtn.refs.button.addEventListener('click', fetchPosts);
@@ -24,16 +24,16 @@ loadMoreBtn.refs.button.addEventListener('click', fetchPosts);
 function onSearch(e) {
   e.preventDefault();
 
-  postApiService.query = e.target.searchQuery.value.trim();
+  apiAxios.query = e.target.searchQuery.value.trim();
   loadMoreBtn.show();
-  postApiService.resetPage();
+  apiAxios.resetPage();
   clearGallery();
   fetchPosts();
 }
 
 function fetchPosts() {
   loadMoreBtn.disable();
-  postApiService.fetchPost().then(data => {
+  apiAxios.fetchPost().then(data => {
     if (!data.length) {
       return Notify.failure(
         'Sorry, there are no images matching your search query. Please try again.'
