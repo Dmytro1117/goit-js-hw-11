@@ -57,7 +57,7 @@ function renderPost(data) {
         comments,
         downloads,
       }) => {
-        return `<a class="gallery__item" href="${largeImageURL}">
+        return `<a class="gallery_img" href="${largeImageURL}">
                   <div class="photo-card">
                       <img src="${webformatURL}" alt="${tags}" loading="lazy" />
                       <div class="info">
@@ -81,10 +81,9 @@ function clearGallery() {
 }
 
 function createLiteBox() {
-  new SimpleLightbox('.gallery__item', {
+  new SimpleLightbox('.gallery_img', {
     captionDelay: 300,
     captionsData: 'alt',
-    // enableKeyboard: true,
   });
 }
 
