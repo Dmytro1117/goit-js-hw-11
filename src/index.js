@@ -58,13 +58,13 @@ function renderPost(data) {
         downloads,
       }) => {
         return `<a class="gallery_img" href="${largeImageURL}">
-                  <div class="photo-card">
+                  <div class="photo">
                       <img src="${webformatURL}" alt="${tags}" loading="lazy" />
-                      <div class="info">
-                        <p class="info-item"><b>Likes</b> ${likes}</p>
-                        <p class="info-item"><b>Views</b> ${views}</p>
-                        <p class="info-item"><b>Comments</b> ${comments}</p>
-                        <p class="info-item"><b>Downloads</b> ${downloads}</p>
+                      <div">
+                        <p><b>Likes</b> ${likes}</p>
+                        <p><b>Views</b> ${views}</p>
+                        <p><b>Comments</b> ${comments}</p>
+                        <p><b>Downloads</b> ${downloads}</p>
                       </div>
                     </div>
                  </a>`;

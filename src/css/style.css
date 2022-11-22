@@ -35,14 +35,6 @@ body {
   text-align: center;
 }
 
-.on-scroll {
-  position: fixed;
-  left: 0;
-  top: 0;
-  z-index: 1;
-  padding: 24px;
-  width: 100%;
-}
 
 .search-form > input {
   margin: 12px;
@@ -72,7 +64,7 @@ body {
   padding: 24px;
 }
 
-.photo-card {
+.photo {
   display: flex;
   flex-direction: column;
   width: 350px;
